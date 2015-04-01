@@ -4,6 +4,7 @@ import java.awt.Color;
 import processing.core.PApplet;
 import processing.core.PVector;
 
+// Base object class.
 public class GameObject {
 	
 	public PApplet applet;
