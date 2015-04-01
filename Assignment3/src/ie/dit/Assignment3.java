@@ -3,7 +3,7 @@ package ie.dit;
 import processing.core.PApplet;
 
 @SuppressWarnings("serial")
-public class Assignment3 extends PApplet {
+public class Assignment3 extends PApplet { //Test by scott
 	
 	Game game;
 	
