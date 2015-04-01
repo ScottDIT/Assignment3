@@ -4,7 +4,7 @@ import processing.core.PApplet;
 
 public class Game {
 	
-	PApplet applet;
+	PApplet applet; // We need this to access our main PApplet.
 	
 	
 	public Game(PApplet applet){
