@@ -8,6 +8,7 @@ public class Assignment3 extends PApplet {
 	Game game;
 	
 	public void setup(){
+		// We're passing in a reference to the applet with 'this'.
 		game = new Game(this);
 	} // End setup.
 	

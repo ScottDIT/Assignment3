@@ -1,5 +1,6 @@
 package ie.dit;
 
+// The base class.
 public class GameObject {
 	
 	float theta;
