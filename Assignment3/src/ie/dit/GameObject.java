@@ -27,7 +27,7 @@ public class GameObject {
 		this.location = location;
 		this.velocity = velocity;
 		this.colour = colour;
-	} // End constructor.
+	} // End overloaded constructor.
 	
 	public void run(){
 		display();
