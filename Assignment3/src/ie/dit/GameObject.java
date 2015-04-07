@@ -1,5 +1,10 @@
 package ie.dit;
 
+/*
+ * This is the base class for our game objects.
+ * 
+ */
+
 import java.awt.Color;
 import processing.core.PApplet;
 import processing.core.PVector;
@@ -29,6 +34,14 @@ public class GameObject {
 		this.velocity = velocity;
 		this.colour = colour;
 	} // End overloaded constructor.
+	
+	/*
+	 * The display and update methods are called in
+	 * the run method. We will always call the run
+	 * method i.e. objects.run(), which means we only
+	 * have to override the display OR update methods
+	 * when we extend this class.
+	 */
 	
 	public void run(){
 		display();
