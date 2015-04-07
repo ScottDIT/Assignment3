@@ -1,14 +1,24 @@
 package ie.dit;
 
+/*
+ * This is our main sketch window, it extends the PApplet class.
+ */
+
 import processing.core.PApplet;
 
 @SuppressWarnings("serial")
 public class Assignment3 extends PApplet {
 	
+	// The game itself is encapsulated into the Game class.
+	
+	// Declare an instance of the Game class.
 	Game game;
 	
 	public void setup(){
-		// We're passing in a reference to the applet with 'this'.
+		/* Here we initialize the game.
+		 * Passing 'this' as an argument to the instance,
+		 * of the game gives us access to the PApplet.
+		 */
 		game = new Game(this);
 	} // End setup.
 	
@@ -19,10 +29,12 @@ public class Assignment3 extends PApplet {
 	} // End draw.
 	
 	public void keyPressed(){
+		// Hook onto the keyPressed event.
 		game.keyPressed();
 	} // End keyPressed.
 	
 	public void keyReleased(){
+		// Hook onto the keyReleased event.
 		game.keyReleased();
 	} // End keyReleased.
 	
