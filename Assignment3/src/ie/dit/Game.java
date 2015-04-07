@@ -5,11 +5,13 @@ package ie.dit;
  * Our game objects will be created here.
  */
 
+import java.util.ArrayList;
 import processing.core.PApplet;
 
 public class Game {
 	
 	PApplet applet; // A reference to the PApplet class.
+	ArrayList<GameObject> objects;
 	
 	// We initialize the game by doing Game game = new Game(this)
 	// the 'this' argument is our PApplet window.
@@ -17,7 +19,9 @@ public class Game {
 		this.applet = applet;
 		this.applet.size(1000, 1000);
 		this.applet.smooth();
-				
+		// An ArrayList for our game objects.
+		objects = new ArrayList<GameObject>();
+		
 	} // End constructor.
 	
 	public void run(){
