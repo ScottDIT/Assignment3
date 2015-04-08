@@ -12,7 +12,7 @@ public class Helicopter extends GameObject {
 		w = 30;
 		h = 40;
 		rotor = 0.0f;
-		location = new PVector(300,300);	
+		location = new PVector(300, 300);	
 	} // End Constructor.
 	
 	public void display() {
@@ -41,6 +41,18 @@ public class Helicopter extends GameObject {
 		applet.popMatrix();
 	} // End draw_helicopter_shadow.
 	
+	private void draw_rotor_shadow() {
+		// Draw the draw_rotor_shadow.
+		applet.pushMatrix();
+		applet.translate( (location.x  + (w/2)) + 15, (location.y  + (h/2)) + 10);
+		applet.rotate(rotor);
+		applet.scale(0.6f);
+		applet.fill(0);
+		applet.rect(-1.5f, -40, 3, 80); // Vertical rotor.
+		applet.rect(-40, -1.5f, 80, 3); // Horizontal rotor.
+		applet.popMatrix();
+	} // End draw_rotor_shadow.
+	
 	private void draw_helicopter() {
 		// Draw the helicopter.
 		applet.fill( colour.getRed(), colour.getGreen(), colour.getBlue(), colour.getAlpha() );
@@ -52,18 +64,6 @@ public class Helicopter extends GameObject {
 		applet.ellipse(0,0, w, h);     // Body.
 		applet.popMatrix();
 	} // End draw_helicopter.
-	
-	private void draw_rotor_shadow() {
-		// Draw the rotor.
-		applet.pushMatrix();
-		applet.translate( (location.x  + (w/2)) + 15, (location.y  + (h/2)) + 10);
-		applet.rotate(rotor);
-		applet.scale(0.6f);
-		applet.fill(0);
-		applet.rect(-1.5f, -40, 3, 80); // Vertical rotor.
-		applet.rect(-40, -1.5f, 80, 3); // Horizontal rotor.
-		applet.popMatrix();
-	} // End draw_rotor.
 	
 	private void draw_rotor() {
 		// Draw the rotor.
