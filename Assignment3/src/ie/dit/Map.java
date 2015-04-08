@@ -19,5 +19,4 @@ public class Map extends GameObject{
 	public void display() {
 		this.applet.image(img, location.x, location.y, w, h);
 	} // End display.
-	//Update
 } // End Map.
