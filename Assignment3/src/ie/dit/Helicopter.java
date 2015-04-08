@@ -17,6 +17,7 @@ public class Helicopter extends GameObject {
 	
 	public void display() {
 		applet.noStroke();
+		draw_helicopter_shadow();
 		draw_helicopter();
 		draw_rotor();
 		applet.noFill();
@@ -25,6 +26,19 @@ public class Helicopter extends GameObject {
 	public void update() {
 		rotor += 0.5f;
 	} // End update.
+	
+	private void draw_helicopter_shadow() {
+		// Draw the helicopter shadow.
+		applet.fill( 0, 0, 0, 120 );
+		applet.pushMatrix();
+		applet.translate( (location.x  + (w/2)) + 15, (location.y  + (h/2)) + 10);
+		applet.rotate(theta);
+		applet.scale(0.6f);
+		applet.rect(-15, h, 30, 3);    // Tail fin.
+		applet.rect(-3,h-20, 6, h-20); // Tail.
+		applet.ellipse(0,0, w, h);     // Body.
+		applet.popMatrix();
+	} // End draw_helicopter_shadow.
 	
 	private void draw_helicopter() {
 		// Draw the helicopter.
