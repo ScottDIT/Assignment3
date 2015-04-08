@@ -16,6 +16,7 @@ public class Map extends GameObject{
 		img = this.applet.loadImage("data/map.jpg");
 	} // End constructor.
 	
+	// We're overriding the GameObject display method.
 	public void display() {
 		this.applet.image(img, location.x, location.y, w, h);
 	} // End display.

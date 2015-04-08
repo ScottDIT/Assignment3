@@ -5,10 +5,6 @@ package ie.dit;
  * 
  */
 
-
-//Library Test
-
-
 import java.awt.Color;
 import processing.core.PApplet;
 import processing.core.PVector;
@@ -21,6 +17,7 @@ public class GameObject {
 	public PVector location, velocity;
 	public Color colour;
 	
+	// The main applet will end up being passed as an argument to our GameObject class.
 	public GameObject(PApplet applet) {
 		this.applet = applet;
 		w = h = 100.0f;
@@ -52,10 +49,7 @@ public class GameObject {
 		update();
 	} // End run.
 	
-	public void display() {
-	} // End display.
-	
-	public void update() {
-	} // End update.
+	public void display() {} // End display.
+	public void update() {}  // End update.
 	
 } // End GameObject class.

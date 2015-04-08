@@ -35,6 +35,7 @@ public class Game {
 	} // End constructor.
 	
 	public void run(){
+		// Run all the game objects.
 		for(GameObject object : objects){
 			object.run();
 		} // End enhanced loop.
