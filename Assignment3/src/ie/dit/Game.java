@@ -13,6 +13,7 @@ public class Game {
 	PApplet applet; // A reference to the PApplet class.
 	ArrayList<GameObject> objects;
 	Helicopter helicopter;
+	Map map;
 	
 	// We initialize the game by doing Game game = new Game(this)
 	// the 'this' argument is our PApplet window.
@@ -23,10 +24,12 @@ public class Game {
 		// An ArrayList for our game objects.
 		objects = new ArrayList<GameObject>();
 		helicopter = new Helicopter(this.applet);
+		map = new Map(this.applet);
 		
 	} // End constructor.
 	
 	public void run(){
+		map.run();
 		helicopter.run();
 	} // End run.
 	
