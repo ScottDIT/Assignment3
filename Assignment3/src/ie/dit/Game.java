@@ -19,7 +19,7 @@ public class Game {
 	// the 'this' argument is our PApplet window.
 	public Game(PApplet applet){
 		this.applet = applet;
-		this.applet.size(1000, 1000);
+		this.applet.size(700, 700);
 		this.applet.smooth();
 		// An ArrayList for our game objects.
 		objects = new ArrayList<GameObject>();
@@ -34,11 +34,11 @@ public class Game {
 	} // End run.
 	
 	public void keyPressed(){
-		
+		player.keyPressed();
 	} // End keyPressed.
 	
 	public void keyReleased(){
-		
+		player.keyReleased();
 	} // End keyPressed.
 	
 } // End Game class.
