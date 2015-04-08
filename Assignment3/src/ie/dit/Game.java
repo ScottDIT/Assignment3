@@ -21,16 +21,23 @@ public class Game {
 		this.applet = applet;
 		this.applet.size(700, 700);
 		this.applet.smooth();
+		
+		// Our game objects.
+		map = new Map(this.applet);
+		player = new Player(this.applet);
+		
 		// An ArrayList for our game objects.
 		objects = new ArrayList<GameObject>();
-		player = new Player(this.applet);
-		map = new Map(this.applet);
 		
+		// Add the game objects to the ArrayList.
+		objects.add(map);
+		objects.add(player);
 	} // End constructor.
 	
 	public void run(){
-		map.run();
-		player.run();
+		for(GameObject object : objects){
+			object.run();
+		} // End enhanced loop.
 	} // End run.
 	
 	public void keyPressed(){

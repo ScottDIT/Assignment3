@@ -27,7 +27,7 @@ public class GameObject {
 		theta = 0.0f;
 		location = new PVector(500.0f, 500.0f);
 		velocity = new PVector(0.0f, 0.0f);
-		colour   = new Color(255, 0, 255, 255);
+		colour   = new Color(0, 0, 180, 255);
 	} // End constructor.
 	
 	public GameObject(float w, float h, PVector location, PVector velocity, Color colour, PApplet applet) {
