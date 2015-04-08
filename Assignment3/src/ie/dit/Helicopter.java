@@ -21,14 +21,17 @@ public class Helicopter extends GameObject {
 	public void display() {
 		applet.noStroke();
 		applet.fill( colour.getRed(), colour.getGreen(), colour.getBlue(), colour.getAlpha() );
-		//applet.rect(location.x, location.y, w, h);
-		//applet.triangle(100,100, 200, 200,300, 300);
-		//applet.triangle(30, 75, 58, 20, 86, 75);
-		applet.rect(location.x +12, location.y + h, 6, h-20); // Tail
-		applet.rect(location.x - 5, location.y + h/2, 40, 3); // Crossbar
-		applet.rect(location.x, location.y + ( (h * 2) - 25), 30, 3);
-		applet.ellipse(location.x  + (w/2), location.y  + (h/2), w, h);
 		
+		applet.pushMatrix();
+		applet.translate(location.x  + (w/2), location.y  + (h/2));
+		applet.rotate(theta);
+		
+		applet.rect(-3,h-20, 6, h-20); // Tail.
+		
+		//applet.rect(-5, h/2, 40, 3); // Crossbar
+		applet.rect(-15, h, 30, 3);
+		applet.ellipse(0,0, w, h);
+		applet.popMatrix();
 		
 		applet.pushMatrix();
 		applet.translate(location.x  + (w/2), location.y  + (h/2));
