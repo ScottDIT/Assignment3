@@ -7,11 +7,14 @@ public class Player extends Helicopter {
 	
 	PVector forward;
 	boolean up, down, left, right;
+	float velocity, min_speed, max_speed;
 	
 	Player(PApplet applet) {
 		super(applet);
 		location = new PVector ( (applet.width/2)-(w/2), applet.height-(h*2) );
-		velocity = new PVector (0.0f, 5.0f);
+		velocity = 4.0f;
+		min_speed = 1.0f;
+		max_speed = 7.0f;
 		forward = new PVector (0.0f, 1.0f);
 		up = down = left = right = false; // Set to true on KeyPressed.
 	} // End constructor.
@@ -41,13 +44,16 @@ public class Player extends Helicopter {
 	
 	private void move() {
 		// This will make the player move in the direction it is facing.
-		forward.x = (float) -Math.sin(theta) * velocity.y;
-		forward.y = (float)  Math.cos(theta) * velocity.y;
+		forward.x = (float) -Math.sin(theta) * velocity;
+		forward.y = (float)  Math.cos(theta) * velocity;
 		// These booleans are set to true when the keys are pressed.
 		if(up)    location.sub(forward);
 		if(down)  location.add(forward);
 		if(left)  theta -= 0.1;
 		if(right) theta += 0.1;
+		if(!up && !down && !left && !right)
+			if(velocity > min_speed) velocity -=0.01;
+			location.sub(forward);
 	} // End move.
 	
 	void inBounds() {
