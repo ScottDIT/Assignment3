@@ -18,6 +18,6 @@ public class Map extends GameObject{
 	
 	// We're overriding the GameObject display method.
 	public void display() {
-		this.applet.image(img, location.x, location.y, w, h);
+		applet.image(img, location.x, location.y, w, h);
 	} // End display.
 } // End Map.
