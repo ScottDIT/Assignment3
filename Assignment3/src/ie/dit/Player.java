@@ -7,14 +7,15 @@ public class Player extends Helicopter {
 	
 	PVector forward;
 	boolean up, down, left, right;
-	float velocity, min_speed, max_speed;
+	float acceleration, speed, min_speed, max_speed;
 	
 	Player(PApplet applet) {
 		super(applet);
 		location = new PVector ( (applet.width/2)-(w/2), applet.height-(h*2) );
-		velocity = 4.0f;
+		speed = 4.0f;
+		acceleration = 0.1f;
 		min_speed = 1.0f;
-		max_speed = 7.0f;
+		max_speed = 10.0f;
 		forward = new PVector (0.0f, 1.0f);
 		up = down = left = right = false; // Set to true on KeyPressed.
 	} // End constructor.
@@ -24,7 +25,7 @@ public class Player extends Helicopter {
 		// classes update method which rotates the helicopter rotor.
 		super.update();
 		move();
-		inBounds();
+		keep_in_bounds();
 	} // End update
 	
 	public void keyPressed(){
@@ -43,20 +44,20 @@ public class Player extends Helicopter {
 	} // End setDirection.
 	
 	private void move() {
-		// This will make the player move in the direction it is facing.
-		forward.x = (float) -Math.sin(theta) * velocity;
-		forward.y = (float)  Math.cos(theta) * velocity;
 		// These booleans are set to true when the keys are pressed.
-		if(up)    location.sub(forward);
-		if(down)  location.add(forward);
-		if(left)  theta -= 0.1;
-		if(right) theta += 0.1;
-		if(!up && !down && !left && !right)
-			if(velocity > min_speed) velocity -=0.01;
-			location.sub(forward);
+		if(up)    speed_up();
+		if(down)  slow_down();
+		if(left)  turn_left();
+		if(right) turn_right();
+		// No direction buttons are pressed.
+		//if(!up && !down) slow_down();
+		// This will make the player move in the direction it is facing.
+		forward.x = (float) -Math.sin(theta) * speed;
+		forward.y = (float)  Math.cos(theta) * speed;
+		location.sub(forward);
 	} // End move.
 	
-	void inBounds() {
+	private void keep_in_bounds() {
 		// If the player passes the bottom of the screen.
 		if (location.y > 700)
 			location.y = -60; // Put the player at the top of the screen.
@@ -71,4 +72,21 @@ public class Player extends Helicopter {
 			location.x = -40; // Put the player at the left side of the screen.
 	} // End inBounds.
 	
+	private void speed_up() {
+		if(speed < max_speed)
+			speed +=acceleration;
+	} // End speed_up.
+	
+	private void slow_down() {
+		if(speed > min_speed)
+			speed -=acceleration;
+	} // End slow_down.
+	
+	private void turn_left() {
+		theta -= acceleration;
+	} // End slow_down.
+	
+	private void turn_right() {
+		theta += acceleration;
+	} // End turn_right.
 } // End Player class.
