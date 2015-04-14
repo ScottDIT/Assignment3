@@ -1,14 +1,14 @@
 package ie.dit;
 
-import processing.core.PApplet;
-import processing.core.PImage;
-import processing.core.PVector;
+import processing.core.PApplet; //import the processing PApplet
+import processing.core.PImage; //import the processing PImage
+import processing.core.PVector; ////import the processing PVector
 
-public class Map extends GameObject{
+public class Map extends GameObject{ //create Map class
 	
 	public PImage img;
 	
-	public Map(PApplet applet){
+	public Map(PApplet applet){ //Constructor
 		super(applet);
 		location = new PVector(0, 0);
 		w = this.applet.width;

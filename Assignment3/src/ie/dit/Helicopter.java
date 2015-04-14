@@ -32,13 +32,13 @@ public class Helicopter extends GameObject { //create the Helicopter class
 		snd_shoot = minim.loadFile("data/shoot.wav");
 	} // End Constructor.
 	
-	public void update() { //
+	public void update() { 
 		rotor_theta += 0.5f;
 		fire_bullet();
 		for (int i = 0; i < objects.size(); ++i) {
 			objects.get(i).run();
-			if (!objects.get(i).alive)
-				objects.remove(i);
+			if (!objects.get(i).alive)//if the object is not alive
+				objects.remove(i); // remove it 
 		} // End loop.
 	} // End update.
 	
