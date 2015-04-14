@@ -16,14 +16,16 @@ public class GameObject {
 	public float w, h, theta;
 	public PVector location;
 	public Color colour;
+	public boolean alive;
 	
 	// The main applet will end up being passed as an argument to our GameObject class.
 	public GameObject(PApplet applet) {
 		this.applet = applet;
+		this.applet.noStroke();
 		w = h = 100.0f;
 		theta = 0.0f;
+		alive = true;
 		location = new PVector(500.0f, 500.0f);
-		//velocity = new PVector(0.0f, 0.0f);
 		colour   = new Color(0, 0, 180, 255);
 	} // End constructor.
 	
@@ -32,7 +34,6 @@ public class GameObject {
 		this.w = w;
 		this.h = h;
 		this.location = location;
-		//this.velocity = velocity;
 		this.colour = colour;
 	} // End overloaded constructor.
 	
@@ -49,7 +50,12 @@ public class GameObject {
 		update();
 	} // End run.
 	
-	public void display() {} // End display.
+	public void display() {
+		applet.fill( colour.getRed(), colour.getGreen(), colour.getBlue(), colour.getAlpha() );
+		applet.rect(location.x, location.y, w, h);
+		applet.noFill();
+	} // End display.
+	
 	public void update() {}  // End update.
 	
 } // End GameObject class.
