@@ -1,7 +1,7 @@
 package ie.dit;
 
 import ddf.minim.Minim; //import the minim library
-import ddf.minim.AudioPlayer;
+import ddf.minim.AudioPlayer; //import the minim audio player 
 
 import java.util.ArrayList;
 
