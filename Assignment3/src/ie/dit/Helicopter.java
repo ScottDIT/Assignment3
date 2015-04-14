@@ -1,15 +1,16 @@
 package ie.dit;
 
-import ddf.minim.Minim;
+import ddf.minim.Minim; //import the minim library
 import ddf.minim.AudioPlayer;
 
 import java.util.ArrayList;
 
-import processing.core.PApplet;
-import processing.core.PVector;
+import processing.core.PApplet; //import the processing PApplet 
+import processing.core.PVector; //import the processing PVector
 
-public class Helicopter extends GameObject {
+public class Helicopter extends GameObject { //create the Helicopter class
 	
+	//declare variables
 	public int health;
 	public PVector forward;
 	public ArrayList<GameObject> objects;
