@@ -7,7 +7,7 @@ import processing.core.PVector;
 public class Enemy extends Helicopter {
 	
 	public PVector forward;
-	public float acceleration, speed, min_speed, max_speed;
+	public float acceleration, speed, min_speed, max_speed; // the enemy speed
 	
 	Enemy(PApplet applet) {
 		super(applet);

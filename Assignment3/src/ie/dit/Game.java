@@ -191,19 +191,19 @@ public class Game {
 		
 	} // End runGame.
 	
-	public void overGame(){
+	public void overGame(){  // this how the scores you get
 		map.run();
 		draw_scores();
 		applet.textAlign(PApplet.CENTER);
 		applet.textSize( 36 );
 		
 		applet.fill(0, 0, 0, 255);
-		applet.text("Game Over", (applet.width/2) + 3, 303);
+		applet.text("Game Over", (applet.width/2) + 3, 303);  // this show when  when game is over 
 		applet.text("Press 'R' to Restart", (applet.width/2) + 3, 353);
 		
 		applet.fill(255, 255, 255, 255);
 		applet.text("Game Over", applet.width/2, 300);
-		applet.text("Press 'R' to Restart", applet.width/2, 350);
+		applet.text("Press 'R' to Restart", applet.width/2, 350); // this pressing R to restart the game play
 		applet.noFill();
 	} // End overGame.
 	
