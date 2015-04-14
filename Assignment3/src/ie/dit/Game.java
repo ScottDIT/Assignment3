@@ -224,20 +224,20 @@ public class Game {
 		}
 	} // End set_level.
 	
-	public void createEnemies( int amount ){
+	public void createEnemies( int amount ){   // create enemies 
 		for ( int i = 0; i < amount; i++ ) {
 			Enemy enemy = new Enemy(this.applet);
 			Random random = new Random();
-			enemy.fireRate = random.nextFloat();
+			enemy.fireRate = random.nextFloat();   // the fire rate 
 			enemy.theta = random.nextFloat() * 2 - 1;
-			enemy.colour = new Color(0, 100, 0, 255);
+			enemy.colour = new Color(0, 100, 0, 255); // the color
 			enemy.location = new PVector(-500, -500);
 			objects.add(enemy);
-			++number_of_enemies;
+			++number_of_enemies;  // add more enemies
 		}
 	} // End createEnemies method.
 	
-	private boolean collide(GameObject obj1, GameObject obj2) {
+	private boolean collide(GameObject obj1, GameObject obj2) {   // the enemies method in which location it came
 		if(obj1.location.x + obj1.w > obj2.location.x &&
 		   obj1.location.x < obj2.location.x + obj2.w &&
 		   obj1.location.y + obj1.h > obj2.location.y &&
