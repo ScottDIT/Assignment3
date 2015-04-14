@@ -29,7 +29,12 @@ public class GameObject {
 		colour   = new Color(0, 0, 180, 255);
 	} // End constructor.
 	
-	
+	public GameObject(float w, float h, PVector location, PVector velocity, Color colour, PApplet applet) {
+		this.applet = applet;
+		this.w = w;
+		this.h = h;
+		this.location = location;
+		this.colour = colour;
 	} // End overloaded constructor.
 	
 	/*
