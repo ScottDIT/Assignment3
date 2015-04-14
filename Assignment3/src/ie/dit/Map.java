@@ -6,10 +6,12 @@ import processing.core.PVector; ////import the processing PVector
 
 public class Map extends GameObject{ //create Map class
 	
+	//declare variables
 	public PImage img;
 	
 	public Map(PApplet applet){ //Constructor
 		super(applet);
+		//set the variables 
 		location = new PVector(0, 0);
 		w = this.applet.width;
 		h= this.applet.height;
