@@ -18,6 +18,6 @@ public class Map extends GameObject{ //create Map class
 	
 	// We're overriding the GameObject display method.
 	public void display() {
-		applet.image(img, location.x, location.y, w, h);
+		applet.image(img, location.x, location.y, w, h); //display the map image 
 	} // End display.
 } // End Map.
