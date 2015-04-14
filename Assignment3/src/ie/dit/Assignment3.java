@@ -6,13 +6,10 @@ package ie.dit;
 
 import processing.core.PApplet;
 
-//Final Test For Push 
-
 @SuppressWarnings("serial")
 public class Assignment3 extends PApplet {
 	
 	// The game itself is encapsulated into the Game class.
-	
 	// Declare an instance of the Game class.
 	Game game;
 	

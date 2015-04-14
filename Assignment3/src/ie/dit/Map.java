@@ -6,9 +6,9 @@ import processing.core.PVector;
 
 public class Map extends GameObject{
 	
-	PImage img;
+	public PImage img;
 	
-	Map(PApplet applet){
+	public Map(PApplet applet){
 		super(applet);
 		location = new PVector(0, 0);
 		w = this.applet.width;
