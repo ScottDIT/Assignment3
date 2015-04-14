@@ -5,9 +5,8 @@ import processing.core.PVector;
 
 public class Player extends Helicopter {
 	
-	PVector forward;
-	boolean up, down, left, right;
-	float acceleration, speed, min_speed, max_speed;
+	public boolean up, down, left, right, bullet_ready;
+	public float acceleration, speed, min_speed, max_speed, fireRate = 5f, timeSinceLastEvent = 0;
 	
 	Player(PApplet applet) {
 		super(applet);
@@ -15,9 +14,9 @@ public class Player extends Helicopter {
 		speed = 4.0f;
 		acceleration = 0.1f;
 		min_speed = 1.0f;
-		max_speed = 10.0f;
+		max_speed = 8.0f;
 		forward = new PVector (0.0f, 1.0f);
-		up = down = left = right = false; // Set to true on KeyPressed.
+		up = down = left = right = bullet_ready = false; // Set to true on KeyPressed.
 	} // End constructor.
 	
 	public void update() {
@@ -26,15 +25,32 @@ public class Player extends Helicopter {
 		super.update();
 		move();
 		keep_in_bounds();
-	} // End update
+	} // End update.
 	
 	public void keyPressed(){
+		load_bullets(applet.keyCode, true);
 		setDirection(applet.keyCode, true);
 	} // End keyPressed.
 	
 	public void keyReleased(){
+		load_bullets(applet.keyCode, false);
 		setDirection(applet.keyCode, false);
 	} // End keyPressed.
+	
+	public void fire_bullet() {
+		if (bullet_ready){
+			if(applet.millis() - timeSinceLastEvent >= 1000/fireRate){
+				snd_shoot.rewind();
+				snd_shoot.play();
+				//objects.add( new Bullet(applet, location.x+(w/2), location.y+(h/2), theta) );
+	            timeSinceLastEvent = applet.millis();
+	        }
+		}
+	} // End fire_bullet.
+	
+	private void load_bullets(int k, boolean decision) {
+		if (k == 69) bullet_ready = decision;
+	} // End load_bullets.
 	
 	private void setDirection(int k, boolean decision) {
 		if     (k == 87 || k == 38) up    = decision; // 87=w || 38=arrow-up
@@ -49,8 +65,6 @@ public class Player extends Helicopter {
 		if(down)  slow_down();
 		if(left)  turn_left();
 		if(right) turn_right();
-		// No direction buttons are pressed.
-		//if(!up && !down) slow_down();
 		// This will make the player move in the direction it is facing.
 		forward.x = (float) -Math.sin(theta) * speed;
 		forward.y = (float)  Math.cos(theta) * speed;
