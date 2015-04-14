@@ -191,19 +191,19 @@ public class Game {
 		
 	} // End runGame.
 	
-	public void overGame(){  // this how the scores you get
+	public void overGame(){                                              // this how the scores you get
 		map.run();
 		draw_scores();
 		applet.textAlign(PApplet.CENTER);
 		applet.textSize( 36 );
 		
 		applet.fill(0, 0, 0, 255);
-		applet.text("Game Over", (applet.width/2) + 3, 303);  // this show when  when game is over 
+		applet.text("Game Over", (applet.width/2) + 3, 303);           // this show when  when game is over 
 		applet.text("Press 'R' to Restart", (applet.width/2) + 3, 353);
 		
 		applet.fill(255, 255, 255, 255);
 		applet.text("Game Over", applet.width/2, 300);
-		applet.text("Press 'R' to Restart", applet.width/2, 350); // this pressing R to restart the game play
+		applet.text("Press 'R' to Restart", applet.width/2, 350);       // this pressing R to restart the game play
 		applet.noFill();
 	} // End overGame.
 	
@@ -224,13 +224,13 @@ public class Game {
 		}
 	} // End set_level.
 	
-	public void createEnemies( int amount ){   // create enemies 
+	public void createEnemies( int amount ){              // create enemies 
 		for ( int i = 0; i < amount; i++ ) {
 			Enemy enemy = new Enemy(this.applet);
 			Random random = new Random();
-			enemy.fireRate = random.nextFloat();   // the fire rate 
+			enemy.fireRate = random.nextFloat();         // the fire rate 
 			enemy.theta = random.nextFloat() * 2 - 1;
-			enemy.colour = new Color(0, 100, 0, 255); // the color
+			enemy.colour = new Color(0, 100, 0, 255);     // the color
 			enemy.location = new PVector(-500, -500);
 			objects.add(enemy);
 			++number_of_enemies;  // add more enemies
