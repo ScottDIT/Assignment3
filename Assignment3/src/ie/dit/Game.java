@@ -93,7 +93,7 @@ public class Game {
 		player.keyReleased();
 	} // End keyPressed.
 	
-	
+	// the instructions for game start and over on screen
 	public void readyGame() {
 		applet.image(ready_img, 0, 0, applet.width, applet.height);
 		applet.textAlign(PApplet.CENTER);
