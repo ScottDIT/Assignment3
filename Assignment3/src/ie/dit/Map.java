@@ -13,7 +13,7 @@ public class Map extends GameObject{
 		location = new PVector(0, 0);
 		w = this.applet.width;
 		h= this.applet.height;
-		img = this.applet.loadImage("data/map.jpg");
+		img = this.applet.loadImage("data/map.jpg"); // add the map picture to the background of game
 	} // End constructor.
 	
 	// We're overriding the GameObject display method.
