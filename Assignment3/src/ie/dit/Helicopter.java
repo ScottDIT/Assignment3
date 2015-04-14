@@ -2,7 +2,9 @@ package ie.dit;
 
 import ddf.minim.Minim;
 import ddf.minim.AudioPlayer;
+
 import java.util.ArrayList;
+
 import processing.core.PApplet;
 import processing.core.PVector;
 
@@ -105,7 +107,7 @@ public class Helicopter extends GameObject {
 		if(applet.millis() - timeSinceLastEvent >= 1000/fireRate){
 			snd_shoot.rewind();
 			snd_shoot.play();
-
+			objects.add( new Bullet(applet, location.x+(w/2), location.y+(h/2), theta) );
 			timeSinceLastEvent = applet.millis();
         }
 	} // End fire_bullet.
