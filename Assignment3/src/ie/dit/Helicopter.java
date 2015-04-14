@@ -18,8 +18,9 @@ public class Helicopter extends GameObject { //create the Helicopter class
 	public Minim minim; // Required to use Minim.
 	public AudioPlayer snd_shoot;
 	
-	Helicopter(PApplet applet) {
+	Helicopter(PApplet applet) { //constructor 
 		super(applet);
+		//set the variables
 		w = 30;
 		h = 40;
 		health = 50;
@@ -31,7 +32,7 @@ public class Helicopter extends GameObject { //create the Helicopter class
 		snd_shoot = minim.loadFile("data/shoot.wav");
 	} // End Constructor.
 	
-	public void update() {
+	public void update() { //
 		rotor_theta += 0.5f;
 		fire_bullet();
 		for (int i = 0; i < objects.size(); ++i) {
