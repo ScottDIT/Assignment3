@@ -61,5 +61,5 @@ public class Enemy extends Helicopter {
 			location.x = -40; // Put the player at the left side of the screen.
 		}
 	} // End inBounds.
-	//test
+	//test.
 } // End Enemy class.
