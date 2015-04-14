@@ -1,15 +1,17 @@
 package ie.dit;
 
-import processing.core.PApplet;
-import processing.core.PVector;
+import processing.core.PApplet; //import the processing PApplet
+import processing.core.PVector; //import the processing PVector
 
-public class Player extends Helicopter {
+public class Player extends Helicopter { //create Player class
 	
+	//Declare Variables 
 	public boolean up, down, left, right, bullet_ready;
 	public float acceleration, speed, min_speed, max_speed, fireRate = 5f, timeSinceLastEvent = 0;
 	
-	Player(PApplet applet) {
+	Player(PApplet applet) { //Constructor
 		super(applet);
+		//set the player variables
 		location = new PVector ( (applet.width/2)-(w/2), applet.height-(h*2) );
 		speed = 4.0f;
 		acceleration = 0.1f;
