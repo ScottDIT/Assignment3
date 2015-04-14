@@ -33,6 +33,6 @@ public class Smoke extends GameObject {
 	    applet.fill( colour.getRed(), colour.getGreen(), colour.getBlue(), lifespan);
 	    applet.ellipse(location.x,location.y, radius, radius);
 	    applet.noFill();
-	} // End display.
+	} // End display
   
 } // End Smoke class.
