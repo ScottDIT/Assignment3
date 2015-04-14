@@ -4,10 +4,11 @@ package ie.dit;
  * This is our main sketch window, it extends the PApplet class.
  */
 
-import processing.core.PApplet;
+import processing.core.PApplet; //import the processing PApplet
+
 
 @SuppressWarnings("serial")
-public class Assignment3 extends PApplet {
+public class Assignment3 extends PApplet { //create Assignment3 class
 	
 	// The game itself is encapsulated into the Game class.
 	// Declare an instance of the Game class.

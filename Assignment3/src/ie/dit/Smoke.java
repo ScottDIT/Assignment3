@@ -5,14 +5,16 @@ import java.util.Random;
 import processing.core.PApplet;
 import processing.core.PVector;
 
-public class Smoke extends GameObject {
+public class Smoke extends GameObject { //create a smoke class
 	
+	//declare variables 
 	public Random random;
 	public float lifespan, radius;
 	public PVector location, velocity, acceleration;
 	
-	Smoke(PApplet applet, float x, float y) {
+	Smoke(PApplet applet, float x, float y) { //Constructor
 		super(applet);
+		//set the smoke variables 
 	    radius = 8;
 	    lifespan = 255.0f;
 	    random = new Random();

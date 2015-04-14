@@ -1,14 +1,16 @@
 package ie.dit;
 
-import processing.core.PApplet;
-import processing.core.PVector;
+import processing.core.PApplet; //import the processing PApplet
+import processing.core.PVector; //import the processing PVector
 
-public class Bullet extends GameObject {
+public class Bullet extends GameObject { //create bullet class
 	
+	//declare variables 
 	public float speed;
 	
-	Bullet(PApplet applet, float x, float y, float theta){
+	Bullet(PApplet applet, float x, float y, float theta){ //create constructor
 		super(applet);
+		//set bullet variables 
 		speed = 14.0f;
 		this.theta = theta;
 		location = new PVector(x, y);
@@ -39,9 +41,9 @@ public class Bullet extends GameObject {
 	    location.y += ly * speed;
 	} // End move.
 	
-	private void out_of_bounds() {
+	private void out_of_bounds() {//method to check when the bullet goes out of the screen
 		if (location.y > applet.height || location.y < -h || location.x < -w || location.x > applet.width)
-			alive = false;
+			alive = false; //when it does, make it lives false 
 	} // End out_of_bounds.
 	
 } // End Bullet class.
