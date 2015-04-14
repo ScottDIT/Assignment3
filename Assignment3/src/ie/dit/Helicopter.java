@@ -1,15 +1,16 @@
 package ie.dit;
 
-import ddf.minim.Minim;
+import ddf.minim.Minim; //import the minim library
 import ddf.minim.AudioPlayer;
 
 import java.util.ArrayList;
 
-import processing.core.PApplet;
-import processing.core.PVector;
+import processing.core.PApplet; //import the processing PApplet 
+import processing.core.PVector; //import the processing PVector
 
-public class Helicopter extends GameObject {
+public class Helicopter extends GameObject { //create the Helicopter class
 	
+	//declare variables
 	public int health;
 	public PVector forward;
 	public ArrayList<GameObject> objects;
@@ -17,8 +18,9 @@ public class Helicopter extends GameObject {
 	public Minim minim; // Required to use Minim.
 	public AudioPlayer snd_shoot;
 	
-	Helicopter(PApplet applet) {
+	Helicopter(PApplet applet) { //constructor 
 		super(applet);
+		//set the variables
 		w = 30;
 		h = 40;
 		health = 50;
@@ -30,7 +32,7 @@ public class Helicopter extends GameObject {
 		snd_shoot = minim.loadFile("data/shoot.wav");
 	} // End Constructor.
 	
-	public void update() {
+	public void update() { //
 		rotor_theta += 0.5f;
 		fire_bullet();
 		for (int i = 0; i < objects.size(); ++i) {
